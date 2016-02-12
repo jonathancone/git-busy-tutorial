@@ -1,8 +1,9 @@
-# A Git Tutorial for Busy Developers
+# A `git` Tutorial for Busy Developers
 
 ###### Jonathan Cone, 2016 
 
-1. Install and configure Git 
+1. Install git
+2. Configure git 
 
   ```
   git config --global user.name "John Doe"
