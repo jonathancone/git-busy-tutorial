@@ -3,8 +3,8 @@
 ###### Jonathan Cone, 2016 
 
 ##### Setup
-1. [Download and install the git tools.](https://git-scm.com/downloads)
-2. Open up a terminal (Linux) or Git Bash (Windows) and configure `git`.
+1. [Download and install the git tools](https://git-scm.com/downloads)
+2. Open up a terminal (Linux) or Git Bash (Windows) and configure `git`
 
   ```
   git config --global user.name "John Doe"
@@ -119,5 +119,49 @@
   ```
   git branch -avv
   ```
-Notice that `feature_x` has an asterisk next to it, this is our current branch.  You'll also see the `master` branch which has `[origin/master]` next to the commit message.  This means that the `master` branch is tracking to the `master` branch on the remote server that we named `origin`.
-1. Test
+Notice that `feature_x` has an asterisk next to it, this is our current branch.  You'll also see the `master` branch which has `[origin/master]` next to the commit message.  This means that the `master` branch is tracking to the `master` branch on the remote server that we named `origin`. We're not tracking `feature_x` remotely.
+1. Let's add our feature, an html version of the README file
+
+  ```
+  cp README.md README.html
+  git add .
+  git commit -m "Adding the README in html format"
+  ```
+1. We decided to make some more changes to the html README
+
+  ```
+  echo "<h1>Welcome</h1>" >> README.html
+  git commit -am "Adding welcome message"
+  git lol
+  ```
+1. At this point, we're finished with our feature. We want to make sure we're up to date with the latest from the remote repository so let's make sure our local `master` is up to date
+
+  ```
+  git checkout master
+  git fetch origin
+  git merge origin/master
+  ```
+1. Now we'll merge the local master into our `feature_x` branch before we merge `feature_x` into `master` so that we can fix any conflicts in our `feature_x` branch, not in `master`
+
+  ```
+  git checkout feature_x
+  git merge master
+  ```
+1. Our `feature_x` branch is now up to date with the latest from `master` so we'll merge it and delete it
+
+   ```
+   git checkout master
+   git merge feature_x
+   git branch -d feature_x
+   ```
+1. Let's review the log
+
+  ```
+  git lol
+  ```
+The feature_x branch is gone and the master branch contains the commit message from our feature branch
+1. Let's push our changes upstream to the remote repository so others can pull them down
+
+  ```
+  git push -u origin master
+  ```
