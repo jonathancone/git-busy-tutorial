@@ -3,8 +3,8 @@
 ###### Jonathan Cone, 2016 
 
 ##### Setup
-1. [Download and install git](https://git-scm.com/downloads)
-2. Open up a terminal (Linux) or Git Bash (Windows) and configure git 
+1. [Download and install the git tools.](https://git-scm.com/downloads)
+2. Open up a terminal (Linux) or Git Bash (Windows) and configure `git`.
 
   ```
   git config --global user.name "John Doe"
