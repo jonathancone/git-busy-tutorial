@@ -8,7 +8,7 @@
 
   ```shell
   $ git config --global user.name "John Doe"
-  $ git config --global user.email johndoe@example.com
+  $ git config --global user.email "x@example.com"
   $ git config --global --add alias.lol "log --graph --decorate --pretty=oneline --abbrev-commit --all"
   ```
   
@@ -76,7 +76,7 @@
   ```shell    
   $ git log
   commit e3ede2c3777b811feff99eee4a3a456a5030e340
-  Author: Jonathan Cone <x@example.com>
+  Author: John Doe <x@example.com>
   Date:   Fri Feb 12 14:42:31 2016 -0600
   
       Adding README file
@@ -95,13 +95,13 @@ Notice the hash code, thats the universal commit ID for that change
   ```shell
   $ git log
   commit 564223329b5c6e38024b978c08beeb8907c40477
-  Author: Jonathan Cone  <x@example.com>
+  Author: John Doe  <x@example.com>
   Date:   Fri Feb 12 14:44:37 2016 -0600
   
       Updating README
   
   commit e3ede2c3777b811feff99eee4a3a456a5030e340
-  Author: Jonathan Cone  <x@example.com>
+  Author: John Doe  <x@example.com>
   Date:   Fri Feb 12 14:42:31 2016 -0600
   
       Adding README file
