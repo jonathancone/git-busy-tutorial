@@ -10,7 +10,9 @@ Jonathan Cone, 2016
 
 # Create a new project and let git know we want to version control it
     
-    git init busy-tutorial && cd busy-tutorial
+    cd ~
+    git init busy-tutorial
+    cd busy-tutorial
 
 # Create a README file for our project
 
@@ -77,9 +79,21 @@ Jonathan Cone, 2016
 
    git push -u origin master
 
-# Let's clone the repository into another workspace
+# Let's clone the repository from the remote URL like a teammate would
 
-   git clone ~/remoterepo.git ~/another-busy-tutorial
+   git clone ~/remoterepo.git ~/another-busy
+   cd ~/another-busy
+   git log
+
+# Now we switch back to our original workspace and to learn about branching
+
+   cd ~/busy-tutorial
+
+# Branches are very light in git and extremely powerful, let's create one
+  for a new html tutorial feature we're adding
+
+  git checkout -b html_tutorial
+
 
 Branching
 Merging
