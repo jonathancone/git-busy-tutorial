@@ -22,6 +22,7 @@
   
   $ cd git-busy
   ````
+
 ##### Making Changes
 1. Create a README file for our project
 
