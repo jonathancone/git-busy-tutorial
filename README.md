@@ -13,7 +13,7 @@
   ```
   
 ##### Creating a Repository
-1. Create a new project and let git know we want to version control it
+1. Create a new project and let `git` know we want to version control it.
   
   ````shell    
   $ cd ~
@@ -24,12 +24,12 @@
   ````
 
 ##### Making Changes
-1. Create a README file for our project
+1. Create a markdown-style README file for our project.
 
   ```shell
   $ echo The git-busy README file > README.md
   ```
-1. View the status of the repository
+1. View the status of the repository.
   
   ```shell
   $ git status
@@ -76,7 +76,7 @@
   ```shell    
   $ git log
   commit e3ede2c3777b811feff99eee4a3a456a5030e340
-  Author: Jonathan Cone <jcone@cpaglobal.com>
+  Author: Jonathan Cone <x@example.com>
   Date:   Fri Feb 12 14:42:31 2016 -0600
   
       Adding README file
@@ -95,13 +95,13 @@ Notice the hash code, thats the universal commit ID for that change
   ```shell
   $ git log
   commit 564223329b5c6e38024b978c08beeb8907c40477
-  Author: Jonathan Cone <jcone@cpaglobal.com>
+  Author: Jonathan Cone  <x@example.com>
   Date:   Fri Feb 12 14:44:37 2016 -0600
   
       Updating README
   
   commit e3ede2c3777b811feff99eee4a3a456a5030e340
-  Author: Jonathan Cone <jcone@cpaglobal.com>
+  Author: Jonathan Cone  <x@example.com>
   Date:   Fri Feb 12 14:42:31 2016 -0600
   
       Adding README file
@@ -150,22 +150,34 @@ Notice the hash code, thats the universal commit ID for that change
   More coming soon...
   ```
   
-##### Sharing Changes  
-1. Everything up until this point has been local, but now we want to push it to a remote server -- we'll just use a different directory to emulate the remote server, but this would normally be a URL
+##### Sharing Changes
+1. Everything up until this point has been local, but now we want to push it to a remote server. Here, we'll just use a different directory called `remoterepo.git` to emulate the remote server. This would normally be a `ssh` or `https` URL.
   
-  ```
+  ```shell
   $ git init --bare ~/remoterepo.git
+  Initialized empty Git repository in ~/remoterepo.git/
+
   $ git remote add origin ~/remoterepo.git
   ```
 1. Now you can view the configured remote repository
   
-  ```
+  ```shell
   $ git remote -v
+  origin  ~/remoterepo.git (fetch)
+  origin  ~/remoterepo.git (push)
   ```
 1. Let's push our changes to the remote
 
-  ```
+  ```shell
   $ git push -u origin master
+  Counting objects: 6, done.
+  Delta compression using up to 8 threads.
+  Compressing objects: 100% (2/2), done.
+  Writing objects: 100% (6/6), 517 bytes | 0 bytes/s, done.
+  Total 6 (delta 0), reused 0 (delta 0)
+  To ~/remoterepo.git
+   * [new branch]      master -> master
+  Branch master set up to track remote branch master from origin.
   ```
 1. Let's clone the repository from the remote URL like a teammate would
 
