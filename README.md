@@ -3,8 +3,8 @@
 ###### Jonathan Cone, 2016 
 
 ##### Setup
-1. [Download and install the git tools](https://git-scm.com/downloads)
-2. Open up a terminal (Linux) or Git Bash (Windows) and configure `git`
+1. [Download and install the git tools](https://git-scm.com/downloads).
+2. Open up a terminal (Linux) or Git Bash (Windows) and configure `git`.
 
   ```
   git config --global user.name "John Doe"
@@ -16,19 +16,32 @@
 1. Create a new project and let git know we want to version control it
   
   ````    
-  cd ~
-  git init git-busy
-  cd git-busy
+  $ cd ~
+  $ git init git-busy
+  Initialized empty Git repository in ~/git-busy/.git/
+  
+  $ cd git-busy
   ````
 1. Create a README file for our project
 
   ```
-  echo The git-busy README file > README.md
+  $ echo The git-busy README file > README.md
   ```
 1. View the status of the repository
   
   ```
-  git status
+  $ git status
+  
+  On branch master
+  
+  Initial commit
+  
+  Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+  
+          README.md
+  
+  nothing added to commit but untracked files present (use "git add" to track)
   ```
 
 1. Add the README.md file to the "stage", sometimes called the "index" to make it tracked
@@ -39,7 +52,15 @@
 1. View the status, notice that the file has been "staged" for commit
   
   ```
-  git status
+  $ git status
+  On branch master
+  
+  Initial commit
+  
+  Changes to be committed:
+    (use "git rm --cached <file>..." to unstage)
+  
+          new file:   README.md
   ```
 1. Commit the change to your repository
   
