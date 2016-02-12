@@ -14,8 +14,8 @@
   
   ````    
   cd ~
-  git init busy-tutorial
-  cd busy-tutorial
+  git init git-busy
+  cd git-busy
   ````
 1. Create a README file for our project
 
@@ -99,7 +99,7 @@
 1. Now we switch back to our original workspace and to learn about branching
 
   ```
-  cd ~/busy-tutorial
+  cd ~/git-busy
   ```
 1. Branches are very light in git and extremely powerful, let's create one for a new html tutorial feature we're adding
 
