@@ -12,7 +12,7 @@
   $ git config --global --add alias.lol "log --graph --decorate --pretty=oneline --abbrev-commit --all"
   ```
   
-##### Making Changes
+##### Creating a Repository
 1. Create a new project and let git know we want to version control it
   
   ````shell    
@@ -22,6 +22,7 @@
   
   $ cd git-busy
   ````
+##### Making Changes
 1. Create a README file for our project
 
   ```shell
