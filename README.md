@@ -3,7 +3,7 @@
 ###### Jonathan Cone, 2016 
 
 1. [Download and install git](https://git-scm.com/downloads)
-2. Configure git 
+2. Open up a terminal (Linux) or Git Bash (Windows) and configure git 
 
   ```
   git config --global user.name "John Doe"
