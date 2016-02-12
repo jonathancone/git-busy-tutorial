@@ -183,8 +183,24 @@ Notice the hash code, thats the universal commit ID for that change
 
   ```
   $ git clone ~/remoterepo.git ~/another-busy
+  Cloning into '~/another-busy'...
+  done.
+
   $ cd ~/another-busy
+  
   $ git log
+  commit 564223329b5c6e38024b978c08beeb8907c40477
+  Author: John Doe <x@example.com>
+  Date:   Fri Feb 12 14:44:37 2016 -0600
+  
+      Updating README
+  
+  commit e3ede2c3777b811feff99eee4a3a456a5030e340
+  Author: John Doe <x@example.com>
+  Date:   Fri Feb 12 14:42:31 2016 -0600
+  
+      Adding README file
+      
   $ cd ~/git-busy
   $ rm -rf ~/another-busy
   ```
