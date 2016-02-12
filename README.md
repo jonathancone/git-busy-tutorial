@@ -25,11 +25,12 @@
   ```
   echo The git-busy README file > README.md
   ```
-1. View the status, notice that the file in "untracked", this is just git's way of saying its not managing this file
+1. View the status of the repository
   
   ```
   git status
   ```
+
 1. Add the README.md file to the "stage", sometimes called the "index" to make it tracked
 
   ```
@@ -104,20 +105,19 @@
   git clone ~/remoterepo.git ~/another-busy
   cd ~/another-busy
   git log
-  ```
-1. Now we switch back to our original workspace and to learn about branching
-
-  ```
   cd ~/git-busy
+  rm -rf ~/another-busy
   ```
-1. Branches are very light in git and extremely powerful, let's create one for a new html tutorial feature we're adding
+##### Branching
+1. Branches are very light in git and extremely powerful, let's create one for a new feature we're adding
 
   ```
-  git checkout -b html_tutorial
+  git checkout -b feature_x
   ```
 1. Now let's take a look at our branches
 
   ```
   git branch -avv
   ```
-1. Notice that html_tutorial has an asterisk next to it, this is our current branch
+Notice that `feature_x` has an asterisk next to it, this is our current branch.  You'll also see the `master` branch which has `[origin/master]` next to the commit message.  This means that the `master` branch is tracking to the `master` branch on the remote server that we named `origin`.
+1. Test
