@@ -77,23 +77,30 @@ Jonathan Cone, 2016
 
 # Let's push our changes to the remote
 
-   git push -u origin master
+    git push -u origin master
 
 # Let's clone the repository from the remote URL like a teammate would
 
-   git clone ~/remoterepo.git ~/another-busy
-   cd ~/another-busy
-   git log
+    git clone ~/remoterepo.git ~/another-busy
+    cd ~/another-busy
+    git log
 
 # Now we switch back to our original workspace and to learn about branching
 
-   cd ~/busy-tutorial
+    cd ~/busy-tutorial
 
 # Branches are very light in git and extremely powerful, let's create one
   for a new html tutorial feature we're adding
 
-  git checkout -b html_tutorial
+    git checkout -b html_tutorial
 
+# Now let's take a look at our branches
+
+    git branch -avv
+
+# Notice that html_tutorial has an asterisk next to it, this is our current branch
+
+# Let's add a directory and some 
 
 Branching
 Merging
