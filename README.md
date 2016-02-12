@@ -62,8 +62,24 @@ Jonathan Cone, 2016
   git checkout -b master
   cat README.md
 
-# 
-    git init --bare ../remoterepo
+# Everything up until this point has been local, but now we want to 
+  push it to a remote server -- we'll just use a different directory to emulate
+  the remote server, but this would normally be a URL
+
+    git init --bare ~/remoterepo.git
+    git remote add origin ~/remoterepo.git
+
+# Now you can view the configured remote repository
+
+    git remote -v
+
+# Let's push our changes to the remote
+
+   git push -u origin master
+
+# Let's clone the repository into another workspace
+
+   git clone ~/remoterepo.git ~/another-busy-tutorial
 
 Branching
 Merging
