@@ -4,7 +4,7 @@
 
 ##### Setup
 1. [Download and install the git tools](https://git-scm.com/downloads).
-2. Open up a terminal (Linux) or Git Bash (Windows) and configure `git`.
+2. Open up a terminal (Linux) or Git Bash (Windows) and configure `git`:
 
   ```shell
   $ git config --global user.name "John Doe"
@@ -13,7 +13,7 @@
   ```
   
 ##### Creating a Repository
-1. Create a new project and let `git` know we want to version control it.
+1. Create a new project and let `git` know we want to version control it:
   
   ````shell    
   $ cd ~
@@ -24,12 +24,12 @@
   ````
 
 ##### Making Changes
-1. Create a markdown-style README file for our project.
+1. Create a markdown-style README file for our project:
 
   ```shell
   $ echo The git-busy README file > README.md
   ```
-1. View the status of the repository.
+1. View the status of the repository:
   
   ```shell
   $ git status
@@ -45,12 +45,12 @@
   nothing added to commit but untracked files present (use "git add" to track)
   ```
 
-1. Add the README.md file to the "stage", sometimes called the "index" to make it tracked
+1. Add the README.md file to the "stage", sometimes called the "index" to make it tracked:
 
   ```shell
   $ git add README.md
   ```
-1. View the status, notice that the file has been "staged" for commit
+1. View the status, notice that the file has been "staged" for commit:
   
   ```shell
   $ git status
@@ -63,7 +63,7 @@
   
           new file:   README.md
   ```
-1. Commit the change to your repository
+1. Commit the change to your repository:
   
   ```shell
   $ git commit -m "Adding README file"
@@ -71,7 +71,7 @@
    1 file changed, 1 insertion(+)
    create mode 100644 README.md
   ```
-1. See the details of your recent commits
+1. See the details of your recent commits:
   
   ```shell    
   $ git log
@@ -81,8 +81,8 @@
   
       Adding README file
   ```
-Notice the hash code, thats the universal commit ID for that change
-1. Make a change to your file, restage it and commit in one step
+Notice the hash code, thats the universal commit ID for that change.
+1. Make a change to your file, restage it and commit in one step:
 
   ```shell
   $ echo More coming soon... >> README.md
@@ -90,7 +90,7 @@ Notice the hash code, thats the universal commit ID for that change
   [master 5642233] Updating README
    1 file changed, 1 insertion(+)
   ```
-1. Now view the log again and observe your new commit at the top
+1. Now view the log again and observe your new commit at the top:
 
   ```shell
   $ git log
@@ -106,7 +106,7 @@ Notice the hash code, thats the universal commit ID for that change
   
       Adding README file
   ```
-1. Compare the latest commit with the previous one
+1. Compare the latest commit with the previous one:
   
   ```shell
   $ git diff HEAD^
@@ -118,7 +118,7 @@ Notice the hash code, thats the universal commit ID for that change
    The git-busy README file
   +More coming soon...
   ```
-1. Check out the previous commit
+1. Check out the previous commit:
   
   ```shell
   $ git checkout HEAD^
@@ -138,7 +138,7 @@ Notice the hash code, thats the universal commit ID for that change
   $ cat README.md
   The git-busy README file
   ```
-1. Now switch back to the latest commit
+1. Now switch back to the latest commit:
   
   ```shell
   $ git checkout master
@@ -159,14 +159,14 @@ Notice the hash code, thats the universal commit ID for that change
 
   $ git remote add origin ~/remoterepo.git
   ```
-1. Now you can view the configured remote repository
+1. Now let's view the configured remote repository:
   
   ```shell
   $ git remote -v
   origin  ~/remoterepo.git (fetch)
   origin  ~/remoterepo.git (push)
   ```
-1. Let's push our changes to the remote
+1. We'll push our changes to the remote repository so other team members can see them:
 
   ```shell
   $ git push -u origin master
@@ -179,9 +179,9 @@ Notice the hash code, thats the universal commit ID for that change
    * [new branch]      master -> master
   Branch master set up to track remote branch master from origin.
   ```
-1. Let's clone the repository from the remote URL like a teammate would
+1. Let's clone the repository from the remote URL like a team member would:
 
-  ```
+  ```shell
   $ git clone ~/remoterepo.git ~/another-busy
   Cloning into '~/another-busy'...
   done.
@@ -200,64 +200,67 @@ Notice the hash code, thats the universal commit ID for that change
   Date:   Fri Feb 12 14:42:31 2016 -0600
   
       Adding README file
-      
+  ```
+1. Finally, we'll clean up the cloned repository:
+  
+  ```shell
   $ cd ~/git-busy
   $ rm -rf ~/another-busy
   ```
 ##### Branching
-1. Branches are very light in git and extremely powerful, let's create one for a new feature we're adding
+1. Branches are very light in git and extremely powerful, let's create one for a new feature we're adding:
 
-  ```
+  ```shell
   $ git checkout -b feature_x
   ```
-1. Now let's take a look at our branches
+1. Next, let's take a look at our branches:
 
-  ```
+  ```shell
   $ git branch -avv
   ```
-Notice that `feature_x` has an asterisk next to it, this is our current branch.  You'll also see the `master` branch which has `[origin/master]` next to the commit message.  This means that the `master` branch is tracking to the `master` branch on the remote server that we named `origin`. We're not tracking `feature_x` remotely.
-1. Let's add our feature, an html version of the README file
+Notice that `feature_x` has an asterisk next to it since it is our current branch.  You'll also see the `master` branch which has `origin/master` next to the commit message.  This means that the `master` branch is tracking to the `master` branch on the remote server that we named `origin`. We're not tracking `feature_x` on the remote server.
+1. Let's add our feature, an html version of the README file:
 
-  ```
+  ```shell
   $ cp README.md README.html
   $ git add .
   $ git commit -m "Adding the README in html format"
   ```
-1. We decided to make some more changes to the html README
+1. We decided to make some more changes to the html README:
 
-  ```
+  ```shell
   $ echo "<h1>Welcome</h1>" >> README.html
   $ git commit -am "Adding welcome message"
   $ git lol
   ```
-1. At this point, we're finished with our feature. We want to make sure we're up to date with the latest from the remote repository so let's make sure our local `master` is up to date
+1. At this point, we're finished with our feature. We want to make sure we're up to date with the latest from the remote repository so let's make sure our local `master` is up to date:
 
-  ```
+  ```shell
   $ git checkout master
   $ git fetch origin
   $ git merge origin/master
   ```
-1. Now we'll merge the local master into our `feature_x` branch before we merge `feature_x` into `master` so that we can fix any conflicts in our `feature_x` branch, not in `master`
+1. We'll merge the local master into our `feature_x` branch before we merge `feature_x` into `master` so that we can fix any conflicts in our `feature_x` branch, not in `master`:
 
-  ```
+  ```shell
   $ git checkout feature_x
   $ git merge master
   ```
-1. Our `feature_x` branch is now up to date with the latest from `master` so we'll merge it and delete it
+1. Our `feature_x` branch is now up to date with the latest from `master` so we'll merge it and delete it:
 
-   ```
+   ```shell
    $ git checkout master
    $ git merge feature_x
    $ git branch -d feature_x
    ```
-1. Let's review the log
+1. Let's review the log:
 
-  ```
+  ```shell
   $ git lol
   ```
 The feature_x branch is gone and the master branch contains the commit message from our feature branch
 1. Let's push our changes upstream to the remote repository so others can pull them down
 
-  ```
+  ```shell
   $ git push -u origin master
   ```
