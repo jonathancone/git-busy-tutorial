@@ -2,7 +2,7 @@
 
 ###### Jonathan Cone, 2016 
 
-1. Install git
+1. [Download and install git](https://git-scm.com/downloads)
 2. Configure git 
 
   ```
